@@ -9,9 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		const modalContainer = document.querySelector('.edit-post-start-page-options__modal .components-modal__header');
 
 		if (modalContainer) {
-			console.log(modalContainer);
+			
 			const closeButton = modalContainer.querySelector('button');
-			console.log(closeButton);
 
 			if (closeButton) {
 				const clickEvent = new Event('click', { bubbles: true });
