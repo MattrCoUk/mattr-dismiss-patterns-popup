@@ -2,28 +2,11 @@
  * Attempt to click on the close button of the 'Choose a Pattern' popup.
  */
 document.addEventListener('DOMContentLoaded', () => {
-	const maxAttempts = 30;
-	let attempts = 0;
+	const modalContainer = document.querySelector('.edit-post-start-page-options__modal .components-modal__header');
+	const closeButton = modalContainer?.querySelector('button');
 
-	const closePopup = () => {
-		const modalContainer = document.querySelector('.edit-post-start-page-options__modal .components-modal__header');
-
-		if (modalContainer) {
-			
-			const closeButton = modalContainer.querySelector('button');
-
-			if (closeButton) {
-				const clickEvent = new Event('click', { bubbles: true });
-				closeButton.dispatchEvent(clickEvent);
-			}
-		}
-
-		attempts++;
-
-		if (attempts >= maxAttempts) {
-			clearInterval(intervalId);
-		}
-	};
-	
-	const intervalId = setInterval(closePopup, 250);
+	if (modalContainer && closeButton) {
+		const clickEvent = new Event('click', { bubbles: true });
+		closeButton.dispatchEvent(clickEvent);
+	}
 });
